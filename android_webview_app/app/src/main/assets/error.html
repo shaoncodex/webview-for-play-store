@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - WebView App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .retry-button {
+            display: inline-block;
+            background-color: #3F51B5;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .retry-button:hover {
+            background-color: #303F9F;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebView App</h1>
+        </header>
+        
+        <main>
+            <section class="error-container">
+                <div class="error-icon">⚠️</div>
+                <h2>Oops! Something went wrong</h2>
+                <p class="error-message">The content you requested could not be loaded. This could be due to a temporary issue.</p>
+                
+                <a href="index.html" class="retry-button">Return to Home</a>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 WebView App. All rights reserved.</p>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const retryButton = document.querySelector('.retry-button');
+            
+            if (retryButton) {
+                retryButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    // Try to load the homepage again
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
